@@ -5,19 +5,21 @@ public class MainTest {
 
         StudentManager manager = new StudentManager();
 
-        manager.addStudent(new Student("1", "Sara", 4.5, "CS", 2));
-        manager.addStudent(new Student("2", "Lama", 3.9, "IT", 3));
-        manager.addStudent(new Student("3", "Reem", 4.8, "CS", 2));
+      
+        manager.addStudent(new Student("1", "Sara", 4.5, "IT", 2022));
+        manager.addStudent(new Student("2", "Lama", 3.9, "CS", 2023));
+        manager.addStudent(new Student("3", "Reem", 4.2, "IT", 2022));
 
-        // حفظ
         FileHandler.saveToFile("students.csv", manager.getStudents());
 
-        // تحميل
-        ArrayList<Student> loaded = FileHandler.loadFromFile("students.csv");
+      
+        ArrayList<Student> loadedStudents =
+                FileHandler.loadFromFile("students.csv");
 
-        // تقارير
-        ReportGenerator.reportByGPA(loaded);
-        ReportGenerator.reportByDepartment(loaded);
-        ReportGenerator.reportByYear(loaded);
+        ReportGenerator.reportByGPA(loadedStudents);
+        ReportGenerator.reportByDepartment(loadedStudents);
+        ReportGenerator.reportByYear(loadedStudents);
+
+        System.out.println(" Program finished successfully");
     }
 }
