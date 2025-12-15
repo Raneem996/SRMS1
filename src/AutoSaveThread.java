@@ -1,4 +1,4 @@
-ublic class AutoSaveThread extends Thread {
+Public class AutoSaveThread extends Thread {
 
     private final String fileName;
     private final StudentManager manager;
