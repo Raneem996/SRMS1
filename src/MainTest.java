@@ -9,13 +9,13 @@ public class MainTest {
         manager.addStudent(new Student("2", "Lama", 3.9, "IT", 3));
         manager.addStudent(new Student("3", "Reem", 4.8, "CS", 2));
 
-        // حفظ
+     
         FileHandler.saveToFile("students.csv", manager.getStudents());
 
-        // تحميل
+    
         ArrayList<Student> loaded = FileHandler.loadFromFile("students.csv");
 
-        // تقارير
+         
         ReportGenerator.reportByGPA(loaded);
         ReportGenerator.reportByDepartment(loaded);
         ReportGenerator.reportByYear(loaded);
